@@ -63,7 +63,7 @@
                 var menuElement = menuElements[menu], offsetY = 0, offsetX = 0, scrollTop, size;
 
                 // Call the menu show event handler (which defaults to a noop)
-                menuShow[menu].call(element, element);
+                menuShow[menu].call(element, event.target);
 
                 if (menuElement == null) return;
 
@@ -76,7 +76,6 @@
 
                 if (event.pageY > scrollTop + (document.documentElement.clientHeight * 0.5)) {
                     offsetY -= parseInt(size.height);
-                    console.log(size.height);
                 }
 
                 // if we'r on the right side of the page, push it over
